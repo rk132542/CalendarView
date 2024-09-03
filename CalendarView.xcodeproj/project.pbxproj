@@ -9,18 +9,57 @@
 /* Begin PBXBuildFile section */
 		321798212C84F03300F2E3F7 /* CalendarViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321798202C84F03300F2E3F7 /* CalendarViewApp.swift */; };
 		321798232C84F03300F2E3F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321798222C84F03300F2E3F7 /* ContentView.swift */; };
-		321798252C84F03300F2E3F7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321798242C84F03300F2E3F7 /* Item.swift */; };
+		321798252C84F03300F2E3F7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321798242C84F03300F2E3F7 /* Event.swift */; };
 		321798272C84F03500F2E3F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321798262C84F03500F2E3F7 /* Assets.xcassets */; };
 		3217982A2C84F03500F2E3F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 321798292C84F03500F2E3F7 /* Preview Assets.xcassets */; };
+		322881322C85F97700F60F5E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322881312C85F97700F60F5E /* WidgetKit.framework */; };
+		322881342C85F97700F60F5E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322881332C85F97700F60F5E /* SwiftUI.framework */; };
+		322881372C85F97700F60F5E /* CalendarLiveBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322881362C85F97700F60F5E /* CalendarLiveBundle.swift */; };
+		322881392C85F97700F60F5E /* CalendarLiveLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322881382C85F97700F60F5E /* CalendarLiveLiveActivity.swift */; };
+		3228813B2C85F97700F60F5E /* CalendarLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228813A2C85F97700F60F5E /* CalendarLive.swift */; };
+		3228813D2C85F97900F60F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3228813C2C85F97900F60F5E /* Assets.xcassets */; };
+		322881412C85F97900F60F5E /* CalendarLiveExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3228812F2C85F97700F60F5E /* CalendarLiveExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3228813F2C85F97900F60F5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 321798152C84F03300F2E3F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3228812E2C85F97700F60F5E;
+			remoteInfo = CalendarLiveExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		322881422C85F97900F60F5E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				322881412C85F97900F60F5E /* CalendarLiveExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3217981D2C84F03300F2E3F7 /* CalendarView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		321798202C84F03300F2E3F7 /* CalendarViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewApp.swift; sourceTree = "<group>"; };
 		321798222C84F03300F2E3F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		321798242C84F03300F2E3F7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		321798242C84F03300F2E3F7 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		321798262C84F03500F2E3F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		321798292C84F03500F2E3F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3228812F2C85F97700F60F5E /* CalendarLiveExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CalendarLiveExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		322881312C85F97700F60F5E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		322881332C85F97700F60F5E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		322881362C85F97700F60F5E /* CalendarLiveBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarLiveBundle.swift; sourceTree = "<group>"; };
+		322881382C85F97700F60F5E /* CalendarLiveLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarLiveLiveActivity.swift; sourceTree = "<group>"; };
+		3228813A2C85F97700F60F5E /* CalendarLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarLive.swift; sourceTree = "<group>"; };
+		3228813C2C85F97900F60F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3228813E2C85F97900F60F5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +70,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3228812C2C85F97700F60F5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				322881342C85F97700F60F5E /* SwiftUI.framework in Frameworks */,
+				322881322C85F97700F60F5E /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				3217981F2C84F03300F2E3F7 /* CalendarView */,
+				322881352C85F97700F60F5E /* CalendarLive */,
+				322881302C85F97700F60F5E /* Frameworks */,
 				3217981E2C84F03300F2E3F7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				3217981D2C84F03300F2E3F7 /* CalendarView.app */,
+				3228812F2C85F97700F60F5E /* CalendarLiveExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,7 +106,7 @@
 			children = (
 				321798202C84F03300F2E3F7 /* CalendarViewApp.swift */,
 				321798222C84F03300F2E3F7 /* ContentView.swift */,
-				321798242C84F03300F2E3F7 /* Item.swift */,
+				321798242C84F03300F2E3F7 /* Event.swift */,
 				321798262C84F03500F2E3F7 /* Assets.xcassets */,
 				321798282C84F03500F2E3F7 /* Preview Content */,
 			);
@@ -70,6 +121,27 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		322881302C85F97700F60F5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				322881312C85F97700F60F5E /* WidgetKit.framework */,
+				322881332C85F97700F60F5E /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		322881352C85F97700F60F5E /* CalendarLive */ = {
+			isa = PBXGroup;
+			children = (
+				322881362C85F97700F60F5E /* CalendarLiveBundle.swift */,
+				322881382C85F97700F60F5E /* CalendarLiveLiveActivity.swift */,
+				3228813A2C85F97700F60F5E /* CalendarLive.swift */,
+				3228813C2C85F97900F60F5E /* Assets.xcassets */,
+				3228813E2C85F97900F60F5E /* Info.plist */,
+			);
+			path = CalendarLive;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,15 +152,34 @@
 				321798192C84F03300F2E3F7 /* Sources */,
 				3217981A2C84F03300F2E3F7 /* Frameworks */,
 				3217981B2C84F03300F2E3F7 /* Resources */,
+				322881422C85F97900F60F5E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				322881402C85F97900F60F5E /* PBXTargetDependency */,
 			);
 			name = CalendarView;
 			productName = CalendarView;
 			productReference = 3217981D2C84F03300F2E3F7 /* CalendarView.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3228812E2C85F97700F60F5E /* CalendarLiveExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 322881452C85F97900F60F5E /* Build configuration list for PBXNativeTarget "CalendarLiveExtension" */;
+			buildPhases = (
+				3228812B2C85F97700F60F5E /* Sources */,
+				3228812C2C85F97700F60F5E /* Frameworks */,
+				3228812D2C85F97700F60F5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalendarLiveExtension;
+			productName = CalendarLiveExtension;
+			productReference = 3228812F2C85F97700F60F5E /* CalendarLiveExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,6 +192,9 @@
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					3217981C2C84F03300F2E3F7 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					3228812E2C85F97700F60F5E = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -119,6 +213,7 @@
 			projectRoot = "";
 			targets = (
 				3217981C2C84F03300F2E3F7 /* CalendarView */,
+				3228812E2C85F97700F60F5E /* CalendarLiveExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +228,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3228812D2C85F97700F60F5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3228813D2C85F97900F60F5E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -141,12 +244,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				321798232C84F03300F2E3F7 /* ContentView.swift in Sources */,
-				321798252C84F03300F2E3F7 /* Item.swift in Sources */,
+				321798252C84F03300F2E3F7 /* Event.swift in Sources */,
 				321798212C84F03300F2E3F7 /* CalendarViewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3228812B2C85F97700F60F5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				322881392C85F97700F60F5E /* CalendarLiveLiveActivity.swift in Sources */,
+				322881372C85F97700F60F5E /* CalendarLiveBundle.swift in Sources */,
+				3228813B2C85F97700F60F5E /* CalendarLive.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		322881402C85F97900F60F5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3228812E2C85F97700F60F5E /* CalendarLiveExtension */;
+			targetProxy = 3228813F2C85F97900F60F5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3217982B2C84F03500F2E3F7 /* Debug */ = {
@@ -271,6 +392,7 @@
 		3217982E2C84F03500F2E3F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +422,7 @@
 		3217982F2C84F03500F2E3F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -326,6 +449,60 @@
 			};
 			name = Release;
 		};
+		322881432C85F97900F60F5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K22JGT84D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CalendarLive/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CalendarLive;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ri.CalendarView.CalendarLive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		322881442C85F97900F60F5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K22JGT84D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CalendarLive/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CalendarLive;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ri.CalendarView.CalendarLive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -343,6 +520,15 @@
 			buildConfigurations = (
 				3217982E2C84F03500F2E3F7 /* Debug */,
 				3217982F2C84F03500F2E3F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		322881452C85F97900F60F5E /* Build configuration list for PBXNativeTarget "CalendarLiveExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				322881432C85F97900F60F5E /* Debug */,
+				322881442C85F97900F60F5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

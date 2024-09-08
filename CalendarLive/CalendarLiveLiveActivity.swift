@@ -8,21 +8,32 @@
 import ActivityKit
 import WidgetKit
 import SwiftUI
+import SwiftData
+
 
 struct CalendarLiveAttributes: ActivityAttributes {
+    public typealias CalendarStatus = ContentState
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
         var emoji: String
+        var classIndex: Int
     }
 
     // Fixed non-changing properties about your activity go here!
-    var name: String
+    
 }
 
+
 struct CalendarLiveLiveActivity: Widget {
+    @Environment(\.modelContext) private var modelContext
+    @Query var dataEvents: [Event]
+
+    
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: CalendarLiveAttributes.self) { context in
-            // Lock screen/banner UI goes here
+            
+            let displayEvents: [Event] = Event.getEventToDisplay(dataEvents: dataEvents, dateTime: Date.init(timeIntervalSinceNow: 78600))
+        
             
             HStack {
                 // Left Side
@@ -39,7 +50,7 @@ struct CalendarLiveLiveActivity: Widget {
                         VStack {
                             
                             HStack {
-                                Text("10:30~11:40")
+                                Text("\(displayEvents[0].stringStartTime())~\(displayEvents[0].stringEndTime())")
                                     .multilineTextAlignment(.leading)
                                 Spacer()
                                 HStack(alignment:.lastTextBaseline, spacing: 0) {
@@ -202,23 +213,26 @@ struct CalendarLiveLiveActivity: Widget {
 
 extension CalendarLiveAttributes {
     fileprivate static var preview: CalendarLiveAttributes {
-        CalendarLiveAttributes(name: "World")
+        CalendarLiveAttributes()
     }
 }
 
 extension CalendarLiveAttributes.ContentState {
-    fileprivate static var smiley: CalendarLiveAttributes.ContentState {
-        CalendarLiveAttributes.ContentState(emoji: "😀")
+    fileprivate static var dayDone: CalendarLiveAttributes.ContentState {
+        CalendarLiveAttributes.ContentState(emoji: "😀", classIndex: 3)
      }
      
      fileprivate static var starEyes: CalendarLiveAttributes.ContentState {
-         CalendarLiveAttributes.ContentState(emoji: "🤩")
+         CalendarLiveAttributes.ContentState(emoji: "🤩", classIndex: 4)
      }
 }
 
 #Preview("Notification", as: .content, using: CalendarLiveAttributes.preview) {
-   CalendarLiveLiveActivity()
-} contentStates: {
-    CalendarLiveAttributes.ContentState.smiley
+    CalendarLiveLiveActivity()
+
+}
+contentStates: {
+    CalendarLiveAttributes.ContentState.dayDone
     CalendarLiveAttributes.ContentState.starEyes
 }
+

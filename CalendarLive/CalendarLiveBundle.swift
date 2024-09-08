@@ -11,7 +11,6 @@ import SwiftUI
 @main
 struct CalendarLiveBundle: WidgetBundle {
     var body: some Widget {
-        CalendarLive()
         CalendarLiveLiveActivity()
     }
 }

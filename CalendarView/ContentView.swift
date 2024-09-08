@@ -7,10 +7,11 @@
 
 import SwiftUI
 import SwiftData
+import ActivityKit
 
 struct ContentView: View {
     @State private var url: String = "webcal://api.veracross.eu/fis/subscribe/410D2CF0-2F35-457D-8346-5733D699E015.ics?uid=FA9000D2-01E1-42E5-997F-E7045E35332A"
-    @State private var event: [Event] = []
+    @Query var dataEvents: [Event] = []
     @State private var isShowingErrorNoEvents = false
     @State private var isFunctionLoading = false
     
@@ -28,8 +29,17 @@ struct ContentView: View {
                         if events.isEmpty {
                             isShowingErrorNoEvents = true
                         } else {
-                            event = events
+                            do {
+                                try modelContext.delete(model: Event.self)
+                            } catch {
+                                print("Failed to clear data.")
+                            }
+                            for event in events {
+                                modelContext.insert(event)
+                            }
+                            try? modelContext.save()
                             print("Fetched \(events.count) events")
+                            print("dataEvents: \(dataEvents.count)")
                             isShowingErrorNoEvents = false
                         }
                         
@@ -39,11 +49,13 @@ struct ContentView: View {
             .padding()
             
             Button("Start Live Activity") {
-                print(event.count)
-                if event.isEmpty {
+                if dataEvents.isEmpty {
                     isShowingErrorNoEvents = true
                 } else {
-                    
+
+                    let attributes = CalendarLiveAttributes()
+                    let state = ActivityContent(state: CalendarLiveAttributes.ContentState(emoji: "", classIndex: 3), staleDate: nil)
+                    _ = try? Activity<CalendarLiveAttributes>.request(attributes: attributes, content: state)
                 }
             }
             .alert("No Events Loaded", isPresented: $isShowingErrorNoEvents) {
@@ -55,7 +67,7 @@ struct ContentView: View {
         }
         .padding()
     }
-
+    
     private func loadEvents(from urlString:String, completion: @escaping ([Event]) -> Void) {
         let httpsURLString = urlString.replacingOccurrences(of: "webcal://", with: "https://")
         

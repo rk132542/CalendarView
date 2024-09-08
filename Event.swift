@@ -23,6 +23,14 @@ final class Event {
         self.classLocation = classLocation
     }
     
+    func stringStartTime() -> String {
+        return startDate.formatted(date: .omitted, time: .shortened)
+    }
+    
+    func stringEndTime() -> String {
+        return endDate.formatted(date: .omitted, time: .shortened)
+    }
+    
     static func parseICS(_ icsString: String) -> [Event] {
         var events: [Event] = []
 
@@ -62,6 +70,18 @@ final class Event {
             }
         }
 
+        return events
+    }
+    
+    static func getEventToDisplay(dataEvents: [Event], dateTime: Date) -> [Event] {
+        var events: [Event] = []
+        let calendar = Calendar.current
+        print(dataEvents.count)
+        // The rest of the day
+        events = dataEvents.filter { event in
+            return event.endDate > dateTime && calendar.isDate(event.startDate, inSameDayAs: dateTime)
+        }
+        
         return events
     }
 }
